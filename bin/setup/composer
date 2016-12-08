@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+COMPOSER_DIR="$(mktemp -d)"
+
+DOWNLOAD_CMD="$PWD/download-composer"
+
+pushd "$COMPOSER_DIR"
+
+"$DOWNLOAD_CMD"
+
+mv -v composer.phar /usr/local/bin/composer
+
+popd
+
+rm -vRf "$COMPOSER_DIR"
