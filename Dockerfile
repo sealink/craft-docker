@@ -19,3 +19,5 @@ RUN /container-scripts/setup.sh
 COPY config/craft craft/config
 
 COPY public public
+
+CMD ["/container-scripts/start"]
