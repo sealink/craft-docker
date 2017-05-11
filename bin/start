@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+[ -z "$CRAFT_LICENSE_KEY" ] || echo "$CRAFT_LICENSE_KEY" > /app/craft/config/license.key
+[ -z "$CRAFT_BASE64_LICENSE_KEY" ] || echo "$CRAFT_BASE64_LICENSE_KEY" | base64 -d > /app/craft/config/license.key
+exec apache2-foreground
