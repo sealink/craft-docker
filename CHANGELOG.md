@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### 0.0.2 Unreleased
+### 0.0.2
 
 * [TT-2596] Add the Craft license key in runtime
 
