@@ -10,6 +10,8 @@ WORKDIR /app
 
 COPY config/ZscalerRootCertificate-2048-SHA256.crt /usr/local/share/ca-certificates
 
+COPY .bowerrc /root
+
 COPY config/craft.conf /etc/apache2/conf-enabled
 
 COPY bin /container-scripts
