@@ -14,3 +14,5 @@ mv -v composer.phar /usr/local/bin/composer
 popd
 
 rm -vRf "$COMPOSER_DIR"
+
+apt-get -y --no-install-recommends install git
