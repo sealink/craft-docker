@@ -15,6 +15,3 @@ echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | tee -a /etc/ap
 
 apt-get update
 apt-get -y install nodejs
-
-find /etc/ssl/certs -type l -exec cat {} ';' > /cert.pem
-npm config -g set cafile /cert.pem
