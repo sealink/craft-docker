@@ -1,5 +1,10 @@
 # Craft CMS Base Image
 
+# Version mapping
+
+`sealink/craft:0.1` is mapped to Craft CMS 2.6.x.  You can expect it to contain
+the latest Craft patch version of 2.6.
+
 ## Development Environment
 
 ### Prerequisites

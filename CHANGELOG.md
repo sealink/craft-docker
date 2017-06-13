@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### 0.1.0 Unreleased
+
+* [DO-24] Upgrade Craft patch version to 2.6.2983.
+
 ### 0.0.3
 
 * [TT-2626] Improvements in 3 areas: bower, git as a composer package
