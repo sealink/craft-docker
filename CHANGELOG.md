@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### 0.1.0 Unreleased
+### 0.1.0
 
 * [DO-24] Upgrade Craft patch version to 2.6.2983.
 
