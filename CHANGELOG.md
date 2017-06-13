@@ -1,8 +1,12 @@
 ## Craft CMS Base Image
 
-### 0.1.0 Unreleased
+### 0.1.1 Unreleased
 
 * [DO-24] Remove the unused Zscaler certificate.
+
+### 0.1.0
+
+* [DO-24] Upgrade Craft patch version to 2.6.2983.
 
 ### 0.0.3
 
