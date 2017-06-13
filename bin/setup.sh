@@ -1,7 +1,6 @@
 #!/bin/sh
 set -e
 cd "$(dirname "$0")"
-update-ca-certificates
 
 apt-get update
 
