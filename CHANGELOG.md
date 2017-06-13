@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### 0.1.1 Unreleased
+### 0.1.1
 
 * [DO-24] Remove the unused Zscaler certificate.
 
