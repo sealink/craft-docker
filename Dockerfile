@@ -8,6 +8,8 @@ ENV LANG C.UTF-8
 
 WORKDIR /app
 
+COPY config/php /usr/local/etc/php/conf.d
+
 COPY config/craft.conf /etc/apache2/conf-enabled
 
 COPY bin /container-scripts
