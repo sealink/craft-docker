@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### 0.1.2 Unreleased
+### 0.1.2
 
 * [TT-2756] Increase the PHP upload size limit
 
