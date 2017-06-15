@@ -2,6 +2,10 @@
 
 ### 0.1.1
 
+* [TT-2756] Increase the PHP uplaod size limit
+
+### 0.1.1
+
 * [DO-24] Remove the unused Zscaler certificate.
 
 ### 0.1.0
