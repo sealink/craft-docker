@@ -2,7 +2,7 @@
 
 ### 0.1.2 Unreleased
 
-* [TT-2756] Increase the PHP uplaod size limit
+* [TT-2756] Increase the PHP upload size limit
 
 ### 0.1.1
 
