@@ -13,6 +13,7 @@ return array_merge(
     'generateTransformsBeforePageLoad' => true,
     'sendPoweredByHeader' => false,
     'phpSessionName' => 'sid',
+    'tokenParam' => 'craft_token',
   ),
   require(__DIR__ . '/overrides/general.php')
 );

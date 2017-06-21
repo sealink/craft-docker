@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### 0.1.3
+
+* [DSM-343] Fix token param setting
+
 ### 0.1.2
 
 * [TT-2756] Increase the PHP upload size limit
