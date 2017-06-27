@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### 0.1.4
+
+* [DSM-349] Upgrade Craft patch version to 2.6.2984.
+
 ### 0.1.3
 
 * [DSM-343] Fix token param setting
