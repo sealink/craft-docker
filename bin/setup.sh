@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 cd "$(dirname "$0")"
 
 apt-get update
 
 setup/composer
-setup/craft
+setup/craft/main
 setup/node
 
 rm -R /var/lib/apt/lists/*

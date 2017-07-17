@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 apt-get -y --no-install-recommends install \
@@ -34,13 +34,7 @@ mkdir -v /app/public
 mv -v public/htaccess /app/public/.htaccess
 rm -vRf "$CRAFT_ARCHIVE_DIR"
 
-cd /app/craft
-chown -v www-data: \
-  app \
-  config \
-  storage
-mkdir -vp storage/runtime/logs
-chown -vR www-data: storage/runtime
+mv -v /app/craft/app/etc/config/common{,_original}.php
 
 find \
   /etc/apache2 \
