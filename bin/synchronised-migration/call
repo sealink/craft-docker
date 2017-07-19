@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+use malkusch\lock\mutex\PHPRedisMutex;
+
+$redis = new Redis();
+$redis->connect($_ENV['REDIS_HOST'], $_ENV['REDIS_PORT']);
+$redis->select($_ENV['REDIS_DATABASE']);
+
+$mutex = new PHPRedisMutex([$redis], 'migration-in-progress');
+$exitCode = $mutex->synchronized(
+  function () {
+    system(__DIR__ . '/../update-database', $exitCode);
+    return $exitCode;
+  }
+);
+exit($exitCode);
