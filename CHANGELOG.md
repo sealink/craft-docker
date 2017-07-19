@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### Unreleased
+
+* [DO-54] Automate data migration synchronisation
+
 ### 0.1.4
 
 * [DSM-349] Upgrade Craft patch version to 2.6.2984.
