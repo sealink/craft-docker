@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+YIIC_PATH=/app/craft/app/etc/console/yiic
+while "$YIIC_PATH" updateCraft hasMore; do
+  "$YIIC_PATH" updatecraft
+done
+while "$YIIC_PATH" updatePlugin hasMore; do
+  "$YIIC_PATH" updatePlugin
+done
