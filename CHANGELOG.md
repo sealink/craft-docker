@@ -2,6 +2,7 @@
 
 ### Unreleased
 
+* [DO-53] Stop Craft from downgrading plugins silently
 * [DO-54] Add the data migration task
 
 ### 0.1.4
