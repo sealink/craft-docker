@@ -5,19 +5,28 @@ require __DIR__ . '/vendor/autoload.php';
 
 use malkusch\lock\mutex\PHPRedisMutex;
 
-$mutex = new PHPRedisMutex([$redis], KEY_IN_PROGRESS, 3600);
-$exitCode = $mutex->synchronized(
-  function () use ($redis) {
-    if (!empty($redis->get(KEY_FAILED))) {
-      fwrite(STDERR, 'Halting the script becasue the previous migration failed.');
-      return 1;
-    }
-    system(__DIR__ . '/../update-database', $exitCode);
-    if ($exitCode != 0) {
-      fwrite(STDERR, 'Migration failed.');
-      $redis->set(KEY_FAILED, '1');
-    }
-    return $exitCode;
+$updateDatabase = function () use ($redis) {
+  if (!empty($redis->get(KEY_FAILED))) {
+    fwrite(
+      STDERR,
+      'Halting the script becasue the previous migration failed.' . PHP_EOL
+    );
+    return 1;
   }
-);
+  system(__DIR__ . '/../update-database', $exitCode);
+  if ($exitCode != 0) {
+    fwrite(STDERR, 'Migration failed.' . PHP_EOL);
+    $redis->set(KEY_FAILED, '1');
+  }
+  return $exitCode;
+};
+
+$mutex = new PHPRedisMutex([$redis], KEY_IN_PROGRESS, 3600);
+try {
+  $exitCode = $mutex->synchronized($updateDatabase);
+} catch (Exception $e) {
+  fwrite(STDERR, 'Exception occurred.' . PHP_EOL);
+  $redis->set(KEY_FAILED, '1');
+  throw $e;
+}
 exit($exitCode);

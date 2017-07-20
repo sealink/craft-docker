@@ -23,8 +23,8 @@ class BaseUpdateCommand extends BaseCommand {
     if ($result['success'])
       return true;
     $this->printError(
-      "Couldn't update plugin $handle:" + PHP_EOL +
-      $result['message'] + PHP_EOL
+      "Couldn't update plugin $handle:" . PHP_EOL .
+      $result['message'] . PHP_EOL
     );
     return false;
   }

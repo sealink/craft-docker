@@ -41,6 +41,6 @@ This logic is as follows.
 1. Obtain the Redis lock.
 1. Halt the deployment if the previous migration failed.
 1. Run the migration task.
-1. If the task failed, record the failure in Redis.
+1. If the task failed, record the failure in Redis and halt the deployment.
 1. Release the lock.
 1. Start the webserver.
