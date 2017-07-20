@@ -15,9 +15,32 @@ The only requirement is Docker.
 
 Run `docker build --rm .` in a terminal
 
-### Extra Notes
+## Extra Notes
+
+### Configuration overriding
 
 About the Craft configuration files in `config/craft`, you can override
 `general.php` with `overrides/general.php` in your project as per your project
 requirements, while `db.php` and `rediscache.php` should never be overridden
 because they are fully controlled via the environment variables.
+
+### Support zero-downtime deployment
+
+When upgrading Craft schema or plugins, i.e. data migration, the default Craft
+behaviour requires us to press a button through the admin page.  This base image
+automated that so that upgrading Craft schema and plugins is done automatically
+before starting the web server.
+
+Also, parallel deployment to multi-instances is supported.  When deploying a new
+version to multiple instances at the same time, one of the instances will
+started the data migration; all other instances will wait for the first data
+migration to finish before continuing to prevent race conditions.
+
+This logic is as follows.
+
+1. Obtain the Redis lock.
+1. Halt the deployment if the previous migration failed.
+1. Run the migration task.
+1. If the task failed, record the failure in Redis.
+1. Release the lock.
+1. Start the webserver.
