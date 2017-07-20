@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### Unreleased
+
+* [DO-53] Stop Craft from downgrading plugins silently
+
 ### 0.1.4
 
 * [DSM-349] Upgrade Craft patch version to 2.6.2984.

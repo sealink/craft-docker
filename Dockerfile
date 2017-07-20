@@ -10,14 +10,14 @@ WORKDIR /app
 
 COPY config/php /usr/local/etc/php/conf.d
 
-COPY config/craft.conf /etc/apache2/conf-enabled
+COPY config/apache /etc/apache2/conf-enabled
 
 COPY bin /container-scripts
 
 RUN /container-scripts/setup.sh
 
-COPY config/craft craft/config
+COPY src .
 
-COPY public public
+RUN /container-scripts/setup/craft/permission
 
 CMD ["/container-scripts/start"]
