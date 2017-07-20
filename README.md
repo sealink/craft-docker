@@ -44,3 +44,8 @@ This logic is as follows.
 1. If the task failed, record the failure in Redis and halt the deployment.
 1. Release the lock.
 1. Start the webserver.
+
+In case of migration failure, all the other deployment will not start because
+Redis will have a key named as `migration-failed` as the failure marker.
+`/container-scripts/synchronised-migration/clear-error` can be used to remove
+the failure marker after the issue is fixed manually.
