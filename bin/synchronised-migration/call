@@ -13,12 +13,14 @@ $updateDatabase = function () use ($redis) {
     );
     return 1;
   }
+  $redis->set(KEY_FAILED, '1');
   system(__DIR__ . '/../update-database', $exitCode);
   if ($exitCode != 0) {
     fwrite(STDERR, 'Migration failed.' . PHP_EOL);
-    $redis->set(KEY_FAILED, '1');
+    return $exitCode;
   }
-  return $exitCode;
+  $redis->del(KEY_FAILED);
+  return 0;
 };
 
 $mutex = new PHPRedisMutex([$redis], KEY_IN_PROGRESS, 3600);
