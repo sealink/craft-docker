@@ -1,6 +1,6 @@
 FROM php:7.0-apache
 
-ARG CRAFT_ARCHIVE_URL=https://download.craftcdn.com/craft/2.6/2.6.2984/Craft-2.6.2984.zip
+ARG CRAFT_ARCHIVE_URL=https://download.craftcdn.com/craft/2.6/2.6.2987/Craft-2.6.2987.zip
 
 ARG NODE_SOURCE_VERSION=node_6.x
 
