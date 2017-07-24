@@ -4,6 +4,7 @@
 
 * [DO-53] Stop Craft from downgrading plugins silently
 * [DO-54] Add the data migration task
+* [DO-54] Automate data migration synchronisation
 
 ### 0.1.4
 

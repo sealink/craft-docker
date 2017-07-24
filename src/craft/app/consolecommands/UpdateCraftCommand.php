@@ -18,8 +18,8 @@ class UpdateCraftCommand extends BaseUpdateCommand {
     if (!$this->updatesService()->isBreakpointUpdateNeeded())
       return true;
     $this->printError(
-      'Fail to perform automated update.' + PHP_EOL +
-      'Please refer to CRAFT_MIN_VERSION_REQUIRED: ' + CRAFT_MIN_VERSION_REQUIRED + PHP_EOL
+      'Fail to perform automated update.' . PHP_EOL .
+      'Please refer to CRAFT_MIN_VERSION_REQUIRED: ' . CRAFT_MIN_VERSION_REQUIRED . PHP_EOL
     );
     return false;
   }

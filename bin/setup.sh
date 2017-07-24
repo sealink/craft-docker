@@ -7,5 +7,6 @@ apt-get update
 setup/composer
 setup/craft/main
 setup/node
+synchronised-migration/prepare
 
 rm -R /var/lib/apt/lists/*

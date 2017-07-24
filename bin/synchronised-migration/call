@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/common.php';
+require __DIR__ . '/vendor/autoload.php';
+
+use malkusch\lock\mutex\PHPRedisMutex;
+
+$updateDatabase = function () use ($redis) {
+  if (!empty($redis->get(KEY_FAILED))) {
+    fwrite(
+      STDERR,
+      'Halting the script becasue the previous migration failed.' . PHP_EOL
+    );
+    return 1;
+  }
+  $redis->set(KEY_FAILED, '1');
+  system(__DIR__ . '/../update-database', $exitCode);
+  if ($exitCode != 0) {
+    fwrite(STDERR, 'Migration failed.' . PHP_EOL);
+    return $exitCode;
+  }
+  $redis->del(KEY_FAILED);
+  return 0;
+};
+
+$mutex = new PHPRedisMutex([$redis], KEY_IN_PROGRESS, 3600);
+try {
+  $exitCode = $mutex->synchronized($updateDatabase);
+} catch (Exception $e) {
+  fwrite(STDERR, 'Exception occurred.' . PHP_EOL);
+  $redis->set(KEY_FAILED, '1');
+  throw $e;
+}
+exit($exitCode);
