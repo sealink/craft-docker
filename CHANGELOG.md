@@ -5,6 +5,7 @@
 * [DO-53] Stop Craft from downgrading plugins silently
 * [DO-54] Add the data migration task
 * [DO-54] Automate data migration synchronisation
+* [DO-61] Upgrade Craft to version 2.6.2987.
 
 ### 0.1.4
 
