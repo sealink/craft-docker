@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### Unreleased
+### 0.1.5
 
 * [DO-53] Stop Craft from downgrading plugins silently
 * [DO-54] Add the data migration task
