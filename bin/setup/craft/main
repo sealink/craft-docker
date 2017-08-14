@@ -30,8 +30,6 @@ unzip "$CRAFT_ARCHIVE"
 rm -v "$CRAFT_ARCHIVE"
 
 mv -v craft /app
-mkdir -v /app/public
-mv -v public/htaccess /app/public/.htaccess
 rm -vRf "$CRAFT_ARCHIVE_DIR"
 
 mv -v /app/craft/app/etc/config/common{,_original}.php

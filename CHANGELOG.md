@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### Unreleased
+
+* [DC-438] Use only routes that have slash ending
+
 ### 0.1.5
 
 * [DO-53] Stop Craft from downgrading plugins silently
