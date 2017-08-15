@@ -7,7 +7,7 @@
   RewriteRule .* - [L]
 
   RewriteCond %{REQUEST_URI} /$
-  RewriteRule (.+)/+$ /$1 [R=301,L]
+  RewriteRule (.+)/+$ %{REQUEST_SCHEME}://%{HTTP_HOST}/$1 [R=301,L]
 
   RewriteRule (.+) index.php?p=$1 [QSA,L]
 </IfModule>
