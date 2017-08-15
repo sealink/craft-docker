@@ -12,5 +12,5 @@
   RewriteCond %{HTTP:X-Forwarded-Proto} ^https$
   RewriteRule (.+)/+$ %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1 [R=301,L]
 
-  RewriteRule (.+)/+$ %{REQUEST_SCHEME}://%{HTTP_HOST}/$1 [R=301,L]
+  RewriteRule (.+)/+$ /$1 [R=301,L]
 </IfModule>
