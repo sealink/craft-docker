@@ -6,8 +6,11 @@
   RewriteCond %{REQUEST_URI} ^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
   RewriteRule .* - [L]
 
-  RewriteCond %{REQUEST_URI} /$
-  RewriteRule (.+)/+$ %{REQUEST_SCHEME}://%{HTTP_HOST}/$1 [R=301,L]
-
+  RewriteCond %{REQUEST_URI} [^/]$
   RewriteRule (.+) index.php?p=$1 [QSA,L]
+
+  RewriteCond %{HTTP:X-Forwarded-Proto} ^https$
+  RewriteRule (.+)/+$ %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteRule (.+)/+$ %{REQUEST_SCHEME}://%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
