@@ -1,8 +1,8 @@
 ## Craft CMS Base Image
 
-### Unreleased
+### 0.1.6
 
-* [DC-438] Use only routes that have slash ending
+* [DC-438] Use only routes that are without a trailing slash
 
 ### 0.1.5
 
