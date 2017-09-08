@@ -9,7 +9,7 @@ $updateDatabase = function () use ($redis) {
   if (!empty($redis->get(KEY_FAILED))) {
     fwrite(
       STDERR,
-      'Halting the script becasue the previous migration failed.' . PHP_EOL
+      'Halting the script because the previous migration failed.' . PHP_EOL
     );
     return 1;
   }

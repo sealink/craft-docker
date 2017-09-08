@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### Unreleased
+
+* [DO-75] Correct the spelling
+
 ### 0.1.6
 
 * [DC-438] Use only routes that are without a trailing slash
