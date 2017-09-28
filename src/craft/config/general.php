@@ -14,6 +14,7 @@ return array_merge(
     'sendPoweredByHeader' => false,
     'phpSessionName' => 'sid',
     'tokenParam' => 'craft_token',
+    'phpMaxMemoryLimit' => '512M',
   ),
   require(__DIR__ . '/overrides/general.php')
 );
