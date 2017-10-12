@@ -3,6 +3,7 @@
 ### Unreleased
 
 * [DO-75] Correct the spelling
+* [DC-576] Upgrade Craft to version 2.6.2991
 
 ### 0.1.6
 
