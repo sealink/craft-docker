@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### Unreleased
+### 0.1.7
 
 * [DO-75] Correct the spelling
 * [DC-576] Upgrade Craft to version 2.6.2991
