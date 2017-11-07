@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### Unreleased
+### 0.1.8
 
 * [DO-101] Upgrade Craft to version 2.6.2994
 
