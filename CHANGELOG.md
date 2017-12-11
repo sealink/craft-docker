@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### 0.1.9
+
+* [DC-701] Upgrade Craft to version 2.6.3000
+
 ### 0.1.8
 
 * [DO-101] Upgrade Craft to version 2.6.2994
