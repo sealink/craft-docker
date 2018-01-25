@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### Unreleased
+
+* [DC-792] Switch to Yarn for package management
+
 ### 0.1.9
 
 * [DC-701] Upgrade Craft to version 2.6.3000
