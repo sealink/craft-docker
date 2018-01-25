@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### Unreleased
+### 0.2.0
 
 * [DC-792] Switch to Yarn for package management
 
