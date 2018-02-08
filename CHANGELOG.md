@@ -1,5 +1,10 @@
 ## Craft CMS Base Image
 
+### 1.0.0 Unreleased
+
+* [DO-158] Move the Craft logic back to the projects; this becomes a pure PHP base
+  for production
+
 ### 0.2.0
 
 * [DC-792] Switch to Yarn for package management
