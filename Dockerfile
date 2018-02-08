@@ -1,8 +1,4 @@
-FROM php:7.0-apache
-
-ARG CRAFT_ARCHIVE_URL=https://download.craftcdn.com/craft/2.6/2.6.3000/Craft-2.6.3000.zip
-
-ARG NODE_SOURCE_VERSION=node_6.x
+FROM php:7.1-apache
 
 ENV LANG C.UTF-8
 
@@ -14,10 +10,6 @@ COPY config/apache /etc/apache2/conf-enabled
 
 COPY bin /container-scripts
 
-RUN /container-scripts/setup.sh
+RUN /container-scripts/prepare
 
-COPY src .
-
-RUN /container-scripts/setup/craft/permission
-
-CMD ["/container-scripts/start"]
+ENTRYPOINT ["/container-scripts/launch"]
