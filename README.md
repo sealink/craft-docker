@@ -1,6 +1,6 @@
 # Craft CMS Base Image
 
-## Craft Version
+[![Build Status](https://travis-ci.org/sealink/craft-docker.svg?branch=master)](https://travis-ci.org/sealink/craft-docker)
 
 This is the PHP base image for running Craft CMS.
 
@@ -17,4 +17,4 @@ The only requirement is Docker.
 
 ### Testing
 
-Run `docker build --rm .` in a terminal
+Run `bin/test` in a terminal
