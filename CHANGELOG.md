@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### 1.0.0 Unreleased
+### 1.0.0
 
 * [DO-158] Move the Craft logic back to the projects; this becomes a pure PHP base
   for production
