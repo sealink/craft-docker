@@ -1,4 +1,0 @@
-#!/usr/bin/env php
-<?php
-require __DIR__ . '/common.php';
-$redis->del(KEY_FAILED);

@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+set -e
+
+main() {
+  install_apt_packages
+  install_php_extensions
+  configure_apache
+}
+
+install_apt_packages() {
+  apt-get update
+  apt-get -y --no-install-recommends install \
+    libmcrypt-dev \
+    libmagickwand-dev
+  rm -Rf /var/lib/apt/lists/*
+}
+
+install_php_extensions() {
+  docker-php-ext-configure opcache --enable-opcache
+
+  docker-php-ext-install \
+    pdo_mysql \
+    mcrypt \
+    opcache
+
+  pecl install \
+    imagick \
+    redis
+
+  docker-php-ext-enable \
+    imagick \
+    redis
+}
+
+configure_apache() {
+  mkdir -vp /app/public
+  echo '<?php echo "It works!" ?>' > /app/public/index.php
+  find \
+    /etc/apache2 \
+    -name '*.conf' \
+    -exec sed -i 's/\/var\/www\/html/\/app\/public/g' {} ';' \
+    -exec sed -i 's/\/var\/www/\/app/g' {} ';'
+
+  pushd /etc/apache2/mods-enabled
+  ln -vs ../mods-available/rewrite.load
+  rm -v deflate.conf deflate.load
+  popd
+}
+
+main
