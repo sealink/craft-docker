@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### 1.0.1
+
+* [DC-2948] Refresh image with php base security fixes (specifically Apache)
+
 ### 1.0.0
 
 * [DO-158] Move the Craft logic back to the projects; this becomes a pure PHP base
