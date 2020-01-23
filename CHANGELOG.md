@@ -1,5 +1,9 @@
 ## Craft CMS Base Image
 
+### Unreleased
+
+* [DC-3064] Add a worker limit for apache
+
 ### 1.0.1
 
 * [DC-2948] Refresh image with php base security fixes (specifically Apache)
