@@ -1,6 +1,6 @@
 ## Craft CMS Base Image
 
-### Unreleased
+### 1.1.0
 
 * [DC-3064] Add a worker limit for apache
 
